@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color:#f7d1ba;
+    margin: 0;
+
+}
+a{
+    color: rgba(0, 0, 0, 0.856);
+    text-decoration: none;
+}
+.books-container{
+    max-width: 1060px;
+    background-color: #d49a89;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+/* BookPreview */
+
+.book-view{
+    background-color: #55757149;
+    width: 250px;
+    margin: 30px 51px;    
+    text-align: center;
+    box-shadow: 0 0 0 1px black;
+    cursor: pointer;
+}
+.book-view img{
+    width: 250px;
+    box-shadow: 0 0 0 1px black;
+}
+.book-view header{
+    height: 125px;
+}
+.toolbar-books-app{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.search-form{
+    margin: 0 15px;
+}
+
+/* header */
+.header{
+    background-color:#557571;
+    margin:0;
+    text-align: center;
+    height: 90px;
+}
+.header h1{
+    text-align: center;
+    margin:0 0 5px;
+    padding: 10px;
+}
+.header a{
+    margin: 13px;
+    color: black;
+    padding: 5px;
+    font-size: 25px;
+}
+.header a:hover{
+    color: wheat;
+}
+
+/* review */
+.review-from{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 0 auto;
+}
+
+/* about */
+.about{
+    text-align: center;
+    width: 1060px;
+    margin:auto;
+}
+
+.book-details-container{
+    max-width: 1060px;
+    background-color: #d49a89;
+    margin: 50px auto;
+    text-align: center;
+}
+.red-book{
+    background-color: red;
+}
+.green-book{
+    background-color: green;
+}
+.regular{
+    background-color: rgba(255, 255, 255, 0.219);
+}
+.book-description{
+    width: 500px;
+    margin: auto;
+}
+.more-text{
+    color: blue;
+    cursor: pointer;
+}
+
+.home-page{
+    background-color: #d49a89;
+    text-align: center;
+    padding: 130px;
+    height: 90vh;
+}
+.home-page img{
+    margin-top: 40px;
+}
+
+
+/* DropdownSearch */
+.books-in-dropdown{
+    /* position: fixed; */
+    z-index: 10;
+    background-color: white;
+    width: 242px;
+}
+.book-in-dropdown{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 9px;
+}
+.book-in-dropdown:hover{
+    background-color: #fcd9d9;
+}
+.book-in-dropdown button{
+    width: 23px;
+    height: 20px;
+    cursor: pointer;
+}
+.book-in-dropdown button:hover{
+    background-color: #ff6c6c;
+}
+.book-in-dropdown p{
+    margin:0;
+}
