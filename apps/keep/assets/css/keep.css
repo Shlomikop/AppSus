@@ -1,144 +1,130 @@
-*{
-    box-sizing: border-box;
-}
-body{
-    background-color:#f7d1ba;
-    margin: 0;
 
+@font-face{
+    font-family: roboto;
+    src: url("../fonts/Roboto-Medium.ttf")
 }
-a{
-    color: rgba(0, 0, 0, 0.856);
-    text-decoration: none;
-}
-.books-container{
+
+/* notes */
+
+.notes{
     max-width: 1060px;
-    background-color: #d49a89;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px auto;
+    margin: 10px auto;
+    font-family: roboto;
+    column-count: 3;
+    column-gap: 40px;
+    column-span: all;
+    column-rule: 2px solid #ffe6e600;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+.note{
+    width: 100%;
+    background-color: #F5F7F7;
+    color: #33353d;
+    margin: 0 0 13px 0;
+    padding: 20px;
+    break-inside: avoid;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.781);
+}
+.note:hover{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.781);
+}
+.text-note{
+    background-color: #ffe6e600;
+    resize: none;
+    font-family: roboto;
+    width: 100%;
+    border-style: none; 
 }
 
-/* BookPreview */
 
-.book-view{
-    background-color: #55757149;
-    width: 250px;
-    margin: 30px 51px;    
-    text-align: center;
-    box-shadow: 0 0 0 1px black;
-    cursor: pointer;
-}
-.book-view img{
-    width: 250px;
-    box-shadow: 0 0 0 1px black;
-}
-.book-view header{
-    height: 125px;
-}
-.toolbar-books-app{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-.search-form{
-    margin: 0 15px;
-}
+/* add-note */
 
-/* header */
-.header{
-    background-color:#557571;
-    margin:0;
-    text-align: center;
-    height: 90px;
+.add-note{
+    background-color: #8d93ab45;
+    padding: 20px;
 }
-.header h1{
-    text-align: center;
-    margin:0 0 5px;
-    padding: 10px;
+.input-text{
+    outline: none;
+    border: none;
+    border-radius:10px
 }
-.header a{
-    margin: 13px;
-    color: black;
-    padding: 5px;
+.control-add-btn{
+    width: 50px;
+    height: 50px;
     font-size: 25px;
-}
-.header a:hover{
-    color: wheat;
-}
-
-/* review */
-.review-from{
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    margin: 0 auto;
-}
-
-/* about */
-.about{
-    text-align: center;
-    width: 1060px;
-    margin:auto;
-}
-
-.book-details-container{
-    max-width: 1060px;
-    background-color: #d49a89;
-    margin: 50px auto;
-    text-align: center;
-}
-.red-book{
-    background-color: red;
-}
-.green-book{
-    background-color: green;
-}
-.regular{
-    background-color: rgba(255, 255, 255, 0.219);
-}
-.book-description{
-    width: 500px;
-    margin: auto;
-}
-.more-text{
-    color: blue;
+    padding: 13px;
     cursor: pointer;
+    border-radius: 25px;
+    margin-left: 6px;
+    color: #33353d;
+}
+.control-add-btn:hover{
+    background-color: #00000017;
+    box-shadow: 0 0 9px 0px #00000023;
 }
 
-.home-page{
-    background-color: #d49a89;
+
+/* edit-note */
+
+.edit-note{
+    margin: 0;
+    flex-direction: row-reverse;
+}
+.done-edit-btn{
+    cursor: pointer;
+    width: 100%;
+    background-color: rgb(44, 175, 88);
     text-align: center;
-    padding: 130px;
-    height: 90vh;
 }
-.home-page img{
-    margin-top: 40px;
+.edit-btn{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
 }
+.edit-small-btn:hover{
+    box-shadow: 0 0 20px 0px black;
+    background-color: #afabab;
+    color: #33353d;
+}
+ 
+/* HELPERS */
 
-
-/* DropdownSearch */
-.books-in-dropdown{
-    /* position: fixed; */
-    z-index: 10;
-    background-color: white;
-    width: 242px;
+ .flex{
+     display: flex;
+ }
+ .column{
+     flex-direction: column;
+ }
+ .justify-center{
+     justify-content: center;
+ }
+.align-center{
+    align-items: center;
 }
-.book-in-dropdown{
-    display: flex;
+.space-between{
     justify-content: space-between;
-    padding: 12px 9px;
 }
-.book-in-dropdown:hover{
-    background-color: #fcd9d9;
+.space-evenly{
+    justify-content: space-evenly;
 }
-.book-in-dropdown button{
-    width: 23px;
-    height: 20px;
+.wrap{
+    flex-wrap: wrap;
+}
+.link{
+    text-decoration: none;
     cursor: pointer;
 }
-.book-in-dropdown button:hover{
-    background-color: #ff6c6c;
+.contain{
+    object-fit:contain;
 }
-.book-in-dropdown p{
-    margin:0;
+
+/* Tablet */
+
+@media (max-width: 1100px){
+    body{
+        background-color: rgba(255, 0, 0, 0.219);
+    }
 }
