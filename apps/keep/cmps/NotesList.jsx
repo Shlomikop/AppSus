@@ -3,9 +3,6 @@ import { NotePreview } from './NotePreview.jsx'
 
 export class NotesList extends React.Component {
 
-
-
-
     render() {
 
         const notes = this.props.notes;

@@ -8,48 +8,68 @@
 
 .notes{
     max-width: 1060px;
-    margin: 0 auto;
+    margin: 10px auto;
     font-family: roboto;
     column-count: 3;
     column-gap: 40px;
     column-span: all;
-    column-rule: 1px solid lightblue;
+    column-rule: 2px solid #ffe6e600;
     page-break-inside: avoid;
     break-inside: avoid;
 }
 .note{
-    background-color: green;
     width: 100%;
-    /* margin:20px 0; */
+    background-color: #F5F7F7;
+    color: #33353d;
     margin: 0 0 13px 0;
     padding: 20px;
     break-inside: avoid;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.781);
+}
+.note:hover{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.781);
 }
 .text-note{
-    width: 200px;
-    background-color: green;
-    color: black;
+    background-color: #ffe6e600;
     resize: none;
     font-family: roboto;
     width: 100%;
+    border-style: none; 
 }
 
 
 /* add-note */
 
 .add-note{
-    background-color: red;
-    text-align: center;
+    background-color: #8d93ab45;
     padding: 20px;
 }
+.input-text{
+    outline: none;
+    border: none;
+    border-radius:10px
+}
+.control-add-btn{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    padding: 13px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-left: 6px;
+    color: #33353d;
+}
+.control-add-btn:hover{
+    background-color: #00000017;
+    box-shadow: 0 0 9px 0px #00000023;
+}
+
 
 /* edit-note */
 
 .edit-note{
     margin: 0;
-}
-.edit-note:hover{
-    background-color:rgba(255, 0, 0, 0.24);
+    flex-direction: row-reverse;
 }
 .done-edit-btn{
     cursor: pointer;
@@ -57,20 +77,17 @@
     background-color: rgb(44, 175, 88);
     text-align: center;
 }
-.done-edit-btn:hover{
-    background-color: rgb(68, 175, 103);
-}
-/* .remove-note{
-    
-} */
 .edit-btn{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
-    margin: 0 3px;
+    border-radius: 10px;
+    text-align: center;
 }
-.edit-btn:hover{
-    background-color:rgba(255, 0, 0, 0.24);
+.edit-small-btn:hover{
+    box-shadow: 0 0 20px 0px black;
+    background-color: #afabab;
+    color: #33353d;
 }
  
 /* HELPERS */
@@ -104,3 +121,10 @@
     object-fit:contain;
 }
 
+/* Tablet */
+
+@media (max-width: 1100px){
+    body{
+        background-color: rgba(255, 0, 0, 0.219);
+    }
+}

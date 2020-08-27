@@ -9,7 +9,21 @@
 *{
     box-sizing: border-box;
 }
+body {
+    margin:0;
+    background-color: #f1f3f8;
+}
+.nav-bar{
+    background-color: #393b44;
+    height: 80px;
+}
 
+
+@media (max-width: 500px){
+    .nav-bar{
+        height: 50px;
+    }
+}
 
 
 

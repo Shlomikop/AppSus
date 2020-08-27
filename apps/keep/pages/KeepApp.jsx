@@ -27,7 +27,7 @@ export class KeepApp extends React.Component {
 
         return (
             <div className="Keep-app">
-                <h1>Keep-app</h1>
+               
                 <AddNote loadNotes={this.loadNotes}/>
                 <NotesList notes={this.state.notes} loadNotes={this.loadNotes}/>
             </div>

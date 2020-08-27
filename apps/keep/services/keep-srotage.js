@@ -62,15 +62,15 @@ const notesBackup = [
             text: "You can leave the note open while you work, and drag it to any location on your screen for easier viewing."
         }
     },
-    {
-        type: "NoteImg",
-        info: {
-            url: "http://some-img/me",
-            title: "Me playing Mi"
-        },
-        style: {
-            backgroundColor: "#00d"
-        }
-    }
+    // {
+    //     type: "NoteImg",
+    //     info: {
+    //         url: "http://some-img/me",
+    //         title: "Me playing Mi"
+    //     },
+    //     style: {
+    //         backgroundColor: "#00d"
+    //     }
+    // }
 
 ];

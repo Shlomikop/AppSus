@@ -52,8 +52,8 @@ export class EditNote extends React.Component {
                     <div className="done-edit-btn" onClick={this.handleDoneEdit}>done</div>
                 </section> :
                 <section className="edit-note flex">
-                    <div className="edit-note edit-btn" onClick={this.handleEdit}>&#x270E;</div>
-                    <div className="remove-note edit-btn" onClick={this.handleRemove}>&#x2715;</div>
+                    <div className="edit-note edit-btn" onClick={this.handleEdit}><i className="fas fa-edit edit-small-btn"></i></div>
+                    <div className="remove-note edit-btn" onClick={this.handleRemove}><i className="fas fa-trash edit-small-btn"></i></div>
                 </section>
 
         )

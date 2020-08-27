@@ -44,12 +44,12 @@ export class AddNote extends React.Component {
         ev.preventDefault();
         keepService.addNote(this.state.note)
             .then((notes) => { this.props.loadNotes(notes) })
-        this.setState({ note: this.getEmptyNote() })
+        this.setState({ note: this.getEmptyNote('NoteText') })
     }
 
-    getEmptyNote() {
+    getEmptyNote(type) {
         return {
-            noteType: 'NoteText',
+            noteType: type,
             info: {
                 text: '',
                 url: null
@@ -57,19 +57,26 @@ export class AddNote extends React.Component {
         }
     }
 
+    changeNoteType = (type) => {
+        this.setState({ note: this.getEmptyNote(type) })
+    }
+
     render() {
 
         return (
-            <div className="add-note">
-                <form onSubmit={this.onSubmit}>
+            <div className="add-note flex justify-center ">
+                <form onSubmit={this.onSubmit} className="flex">
                     <input placeholder={this.getPlaceHolder()}
                         type="text" onChange={this.handleValueChange}
                         value={this.state.note.info.text}
+                        className="input-text"
                     />
+                    <div className="flex">
+                        <i className="fas fa-font control-add-btn" onClick={() => this.changeNoteType('NoteText')}></i>
+                        <i className="fas fa-image control-add-btn" onClick={() => this.changeNoteType('NoteImg')}></i>
+                    </div>
                 </form>
-
             </div>
-
         )
     }
 }
