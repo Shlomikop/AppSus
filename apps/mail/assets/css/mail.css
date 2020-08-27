@@ -1,17 +1,23 @@
-
+@import './Modal.css';
 /* COMPONENTS */
 @font-face{
     font-family:roboto-thin;
     src: url('../../../../assets/fonts/Roboto-Thin.ttf');
 }
 
-a{
-    text-decoration: none;
-    color: black;
-    font-family: roboto-thin, serif;
+hr{
+    height: 2px;
+    color:#e6ebeb; 
+    width: 100%;
 }
+
+.side-bar{
+padding: 10px;
+}
+
 ul{
     list-style: none;
+    padding:10px;
 }
 .search-bar{
     background-color: #e6ebeb;
@@ -59,7 +65,8 @@ ul{
 font-family: roboto, serif;
 }
 .light-font{
-    font-weight: 500;
+    font-weight: 800;
+    color:#909396;
 }
 .grid {
     display:grid;
@@ -107,9 +114,6 @@ font-family: roboto, serif;
     text-decoration: none;
     cursor: pointer;
 }
-.fiftyPw{
-    width: 50%;
-}
 .padd30{
     padding:30px;
 }
@@ -121,6 +125,21 @@ font-family: roboto, serif;
 }
 .fiftyPh{
     height: 50%;
+}
+.twentyPw{
+ width: 20%;
+}
+.thirdyPw{
+    width: 30%;
+}
+.fiftyPw{
+width: 50%;
+}
+.eightyPw{
+    width: 80%;
+}
+.w100P{
+    width: 100%;
 }
 
 
@@ -138,3 +157,55 @@ table{
 .date-td{
     width: 20%;
 }
+
+/* SIDE BAR  */
+
+.side-bar-container{
+    font-family: roboto-thin,serif;
+    color: #77797b;
+    font-weight: 700;
+}
+.side-bar-container ul li{
+cursor: pointer;
+margin-bottom: 10px;
+}
+
+/* GMAIL COMPOSE BUTTON ------------------------------------------------------*/
+.btn-compose {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+	background-color: white;
+    color: #3c4043;
+    display: inline-flex;
+	box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+	transition: 0.5s;
+}
+.btn-compose .text-compose {
+    margin-left: 1px;
+    font-size: 14px;
+    line-height: 54px;
+    display: none;
+}
+.btn-compose::before {
+	background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    content: '';
+    min-width: 56px;
+    display: block;
+}
+
+.btn-compose:hover {
+    cursor: pointer;
+	background-position: 10px;
+	width: 150px;
+	border-radius: 90px;
+	text-decoration: none;
+}
+.btn-compose:hover .text-compose {
+	display: block;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
