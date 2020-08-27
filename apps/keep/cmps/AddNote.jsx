@@ -1,6 +1,4 @@
-import { noteService } from '../services/keep-service.js'
-
-
+import { keepService } from '../services/keep-service.js'
 
 export class AddNote extends React.Component {
 
@@ -40,10 +38,12 @@ export class AddNote extends React.Component {
     }
 
     onSubmit = (ev) => {
+
+        if (!this.state.note.info.text) return;
+
         ev.preventDefault();
-        noteService.addNote(this.state.note)
-
-
+        keepService.addNote(this.state.note)
+            .then((notes) => { this.props.loadNotes(notes) })
         this.setState({ note: this.getEmptyNote() })
     }
 
@@ -57,15 +57,15 @@ export class AddNote extends React.Component {
         }
     }
 
-
     render() {
-
-        const placeHolder = this.getPlaceHolder();
 
         return (
             <div className="add-note">
                 <form onSubmit={this.onSubmit}>
-                    <input placeholder={placeHolder} type="text" onChange={this.handleValueChange} value={this.state.value} />
+                    <input placeholder={this.getPlaceHolder()}
+                        type="text" onChange={this.handleValueChange}
+                        value={this.state.note.info.text}
+                    />
                 </form>
 
             </div>

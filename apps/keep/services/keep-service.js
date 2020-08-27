@@ -1,7 +1,9 @@
 import { keepStorage } from './keep-srotage.js'
 
-export const noteService = {
-  addNote
+export const keepService = {
+  addNote,
+  removeNote,
+  doneEditModal
 }
 
 
@@ -34,10 +36,11 @@ function addReview(bookId, review) {
 
 function addNote(note) {
   note.id = getRandId();
-  keepStorage.getNotes()
+  return keepStorage.getNotes()
     .then(notes => {
       notes.push(note);
       keepStorage.saveNotes(notes);
+      return notes;
     })
     .catch(() => {
       console.log("get Notes from store failed...");
@@ -47,3 +50,22 @@ function addNote(note) {
 function getRandId() {
   return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
 }
+
+function removeNote(noteId) {
+  return keepStorage.getNotes()
+    .then(notes => notes.filter(note => note.id !== noteId))
+    .catch((error) => {
+      console.log(error);
+    })
+}
+
+function doneEditModal() {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Your work has been saved',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+

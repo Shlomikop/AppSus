@@ -15,50 +15,62 @@ function getNotes() {
             saveNotes(notes);
         }
         resolve(notes);
-        // reject("Failure to load notes");
+
+        if (!notes) reject("Failure to load notes");//...
     })
 }
+
 
 const notesBackup = [
     {
         id: 'swppiv',
         noteType: "NoteText",
         info: {
-            text: "111Fullstack Me Baby!"
+            text: "Notes are the electronic equivalent of paper sticky notes."
         }
     },
     {
         id: 'mjxj',
         noteType: "NoteText",
         info: {
-            text: "222Fullstack Me Baby!"
+            text: "Use notes to jot down questions, ideas, reminders, and anything you would write on paper!"
         }
-    }, 
+    },
     {
         id: 'dfhsd',
         noteType: "NoteText",
         info: {
-            text: "333Fullstack Me Baby!"
+            text: "You can leave notes open on the screen while you work."
         }
-    }, 
+    },
     {
         id: 'tukxd',
         noteType: "NoteText",
         info: {
-            text: "444Fullstack Me Baby!"
+            text: "His is convenient when you are using notes for saving information that you might need later"
         }
-    },{
+    }, {
         id: 'dddgav',
         noteType: "NoteText",
         info: {
-            text: "555Fullstack Me Baby!"
+            text: "Type the text of the note. The note saves automatically."
         }
-    },{
+    }, {
         id: 'gsadfb',
         noteType: "NoteText",
         info: {
-            text: "666Fullstack Me Baby!"
+            text: "You can leave the note open while you work, and drag it to any location on your screen for easier viewing."
         }
     },
+    {
+        type: "NoteImg",
+        info: {
+            url: "http://some-img/me",
+            title: "Me playing Mi"
+        },
+        style: {
+            backgroundColor: "#00d"
+        }
+    }
 
 ];

@@ -4,9 +4,11 @@
     src: url("../fonts/Roboto-Medium.ttf")
 }
 
- /* notes */
+/* notes */
 
 .notes{
+    max-width: 1060px;
+    margin: 0 auto;
     font-family: roboto;
     column-count: 3;
     column-gap: 40px;
@@ -23,6 +25,15 @@
     padding: 20px;
     break-inside: avoid;
 }
+.text-note{
+    width: 200px;
+    background-color: green;
+    color: black;
+    resize: none;
+    font-family: roboto;
+    width: 100%;
+}
+
 
 /* add-note */
 
@@ -34,11 +45,32 @@
 
 /* edit-note */
 
+.edit-note{
+    margin: 0;
+}
 .edit-note:hover{
     background-color:rgba(255, 0, 0, 0.24);
 }
-.remove-note{
+.done-edit-btn{
     cursor: pointer;
+    width: 100%;
+    background-color: rgb(44, 175, 88);
+    text-align: center;
+}
+.done-edit-btn:hover{
+    background-color: rgb(68, 175, 103);
+}
+/* .remove-note{
+    
+} */
+.edit-btn{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0 3px;
+}
+.edit-btn:hover{
+    background-color:rgba(255, 0, 0, 0.24);
 }
  
 /* HELPERS */
