@@ -6,7 +6,6 @@ import { KeepApp } from './apps/keep/pages/KeepApp.jsx'
 import { MailApp } from './apps/mail/MailApp.jsx'
 import {EmailDetails} from './apps/mail/pages/EmailDetails.jsx'
 
-
 export class App extends React.Component {
 
     render() {

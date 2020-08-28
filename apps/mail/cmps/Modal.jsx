@@ -1,15 +1,15 @@
-import {emailService} from '../services/mail-service.js'
+import { emailService } from '../services/mail-service.js'
 
 export class Modal extends React.Component {
 
     state = {
         isShown: false,
-        newEmail:{
-            subject:null,
-            body:null,
+        newEmail: {
+            subject: '',
+            body: '',
             id: emailService.getRandomId()
         },
-      
+
     }
 
 
@@ -17,17 +17,47 @@ export class Modal extends React.Component {
         if (this.props.toggleModal && !prevState.isShown) this.setState({ isShown: true })
     }
 
-    closeModal = () => {
-        this.props.closeParentModal()
-        this.setState({ isShown: false })
+    onInputChange = (ev) => {
+        const keyName = ev.target.name;
+        const value = ev.target.value
+
+        this.setState(prevState => ({
+            ...prevState,
+            newEmail: {
+                ...prevState.newEmail,
+                [keyName]: value
+            }
+        }))
     }
 
- 
-      onInputChange=(ev)=>{
-        const keyName= ev.target.name;
-        const value=ev.target.value
-        this.setState({...this.newEmail,[keyName]:value})
+    closeModal = () => {
+
+        this.props.closeParentModal()
+        this.setState({ isShown: false })
+        this.setState(prevState => ({
+            ...prevState,
+            newEmail: {
+                ...prevState.newEmail,
+                subject: ''
+            }
+        }))
+        this.setState(prevState => ({
+            ...prevState,
+            newEmail: {
+                ...prevState.newEmail,
+                body: ''
+            }
+        }))
+        
     }
+
+onAddEmail=()=>{
+    const id =this.state.newEmail.id
+    const subject =this.state.newEmail.subject
+    const body =this.state.newEmail.body
+    emailService.addEmail(id,subject,body)
+    this.closeModal()
+}
 
     // onInputChange=(ev)=>{
     //     const keyName= ev.target.name;
@@ -38,18 +68,18 @@ export class Modal extends React.Component {
 
     render() {
         const { isShown } = this.state
-
+        const style = {fontFamily:'roboto,serif'}
         return (
             <div className={`modal-wrapper ${isShown ? '' : 'hide'}`} onClick={this.closeModal} >
                 <div className="modal-content grid" onClick={(ev) => ev.stopPropagation()}>
                     <label className="new-msg-label" htmlFor="">To</label><header className="new-msg">New Message</header>
                     <input className="to-msg" type="text" />
                     <label className="subject-msg-label">Subject</label>
-                    <input onClick={this.onInputChange} name="subject" className="subject-msg" type="text" name="" id="" />
-                    <textarea onClick={this.onInputChange} name="body" className="body-msg"></textarea>
+                    <input onChange={this.onInputChange} name="subject" className="subject-msg" type="text"/>
+                    <textarea onChange={this.onInputChange} style={style} name="body" className="body-msg"></textarea>
                     <div className="props-msg"></div>
-                    <button className="send-msg" onClick={this.closeModal}>Send</button>
-                    <i className="fas fa-trash close-msg"></i>
+                    <button onClick={this.onAddEmail} className="send-msg">Send</button>
+                    <i className="fas fa-trash close-msg" onClick={this.closeModal}></i>
 
                 </div>
             </div >
