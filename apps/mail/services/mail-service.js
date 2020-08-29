@@ -77,7 +77,6 @@ function starredQuery() {
 
 function _filterredEmailsbyStars() {
   const starredEmails = emails.filter(email => email.isStarred === true)
-  console.log("function_filterredEmailsbyStars -> starredEmails", starredEmails)
   return starredEmails
 }
 
@@ -110,7 +109,6 @@ function getRandomId(length = 4) {
 
 function addEmail(id, subject, body) {
   const newEmail = _createNewEmail(id, subject, body)
-  console.log("addEmail -> newEmail", newEmail)
   emails.push(newEmail)
 }
 
@@ -153,7 +151,6 @@ function setStar(emailId) {
 
 function progressCalc() {
   const res = ((emails.filter(email => email.isRead === true)).length / emails.length) * 100
-  console.log("progressCalc -> res", res)
 
   return res.toFixed(2)
 }

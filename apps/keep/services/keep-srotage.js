@@ -102,6 +102,15 @@ const notesBackup = [
             backgroundColor: "#F5F7F7"
         }
     },
-
-
+    {
+        id: 'gsadfbgasasdf',
+        noteType: "NoteVideo",
+        info: {
+            text: "https://www.youtube.com/embed/YYOKMUTTDdA&list=RDYYOKMUTTDdA&start_radio=1",
+            url: ""
+        },
+        style: {
+            backgroundColor: "#F5F7F7"
+        }
+    }
 ];

@@ -53,7 +53,6 @@ export class MailApp extends React.Component {
             .then(starredEmails => {
                 this.setState({ starredEmails})
             })
-        console.log(this.state.starredEmails);
         this.setState({ isStarredShown: true })
     }
     backToInbox=()=>{

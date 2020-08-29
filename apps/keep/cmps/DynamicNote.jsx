@@ -1,5 +1,6 @@
 import { NoteText } from './notes-type/NoteText.jsx'
 import { NoteImg } from './notes-type/NoteImg.jsx'
+import { NoteVideo } from './notes-type/NoteVideo.jsx'
 
 
 export function DynamicNote ({ note, isEdit }) {
@@ -8,8 +9,8 @@ export function DynamicNote ({ note, isEdit }) {
         case 'NoteText':
             return <NoteText note={note} isEdit={isEdit}/>
         case 'NoteImg':
-            return <NoteImg note={note} isEdit={isEdit}/>
-        
-
+            return <NoteImg note={note}/>
+        case 'NoteVideo':
+            return <NoteVideo note={note}/>
     }
 }
