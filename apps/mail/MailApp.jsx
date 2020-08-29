@@ -69,8 +69,8 @@ export class MailApp extends React.Component {
             <EmailFilter setFilter={this.setFilter} />
             <div className="email-container w100P flex">
 
-                <div className="twentyPw"><SideBar progress={this.state.progress} inbox={this.backToInbox} setStarredEmails={this.setStarredEmails} toggleModal={this.toggleModal} history={this.props.history} className="side-bar flex column" /></div>
-                <div className="eightyPw"> <EmailList setBoolRender={this.setBoolRender} emails={this.emailsToShow} history={this.props.history} loadEmails={this.loadEmails} /></div>
+                <div className="sidebar-out twentyPw"><SideBar progress={this.state.progress} inbox={this.backToInbox} setStarredEmails={this.setStarredEmails} toggleModal={this.toggleModal} history={this.props.history} className="side-bar flex column" /></div>
+                <div className="emailslist-out eightyPw"> <EmailList setBoolRender={this.setBoolRender} emails={this.emailsToShow} history={this.props.history} loadEmails={this.loadEmails} /></div>
 
             </div>
             <Modal closeParentModal={this.closeParentModal} toggleModal={this.state.isModalOpen}>

@@ -29,8 +29,8 @@ export class EmailDetails extends React.Component {
             <i onClick={this.onGoBack} className="fas fa-backspace backspace"> Inbox</i>
 
             <div className="flex column twentyPh w100P space-evenly">
-            <h1 style={{ display: 'inline' }}>{email.subject}</h1>
             <span>Sent from: <i className="far fa-address-card"> {email.from}</i></span>
+            <h1 style={{ display: 'inline' }}>{email.subject}</h1>
             </div>
 
             <hr />
