@@ -29,7 +29,7 @@ const notesBackup = [
             text: "Notes are the electronic equivalent of paper sticky notes."
         },
         style: {
-            backgroundColor: "#F1F3F8"
+            backgroundColor: "#F9F3B4"
         }
     },
     {
@@ -49,7 +49,7 @@ const notesBackup = [
             text: "You can leave notes open on the screen while you work."
         },
         style: {
-            backgroundColor: "#F1F3F8"
+            backgroundColor: "#FD8B8B"
         }
     },
     {
@@ -61,7 +61,18 @@ const notesBackup = [
         style: {
             backgroundColor: "#F1F3F8"
         }
-    }, {
+    },
+    {
+        noteType: "NoteImg",
+        info: {
+            url: "https://image.shutterstock.com/image-photo/fantastic-spring-view-cameo-island-260nw-789653536.jpg",
+            text: "Me playing Mi"
+        },
+        style: {
+            backgroundColor: "#F5F7F7"
+        }
+    },
+    {
         id: 'dddgav',
         noteType: "NoteText",
         info: {
@@ -77,7 +88,7 @@ const notesBackup = [
             text: "You can leave the note open while you work, and drag it to any location on your screen for easier viewing."
         },
         style: {
-            backgroundColor: "#F1F3F8"
+            backgroundColor: "#D6FFFF"
         }
     },
     {
@@ -88,18 +99,9 @@ const notesBackup = [
             url: "https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg"
         },
         style: {
-            backgroundColor: "#F1F3F8"
+            backgroundColor: "#F5F7F7"
         }
     },
-    {
-        noteType: "NoteImg",
-        info: {
-            url: "https://image.shutterstock.com/image-photo/fantastic-spring-view-cameo-island-260nw-789653536.jpg",
-            text: "Me playing Mi"
-        },
-        style: {
-            backgroundColor: "#00d"
-        }
-    }
+
 
 ];

@@ -5,6 +5,7 @@ export class EditNote extends React.Component {
 
     state = {
         isEdit: false,
+        color: "#F5F7F7"
     }
 
     handleRemove = () => {
@@ -27,32 +28,37 @@ export class EditNote extends React.Component {
             }
         })
     }
-
     handleEdit = () => {
         this.props.changeEditState();
         this.setState({ isEdit: true });
     }
-
     handleDoneEdit = () => {
         this.setState({ isEdit: false });
         this.props.changeEditState();
         this.modalDoneEdit(); //modal
     }
-
     modalDoneEdit = () => {
-        keepService.doneEditModal()
+        keepService.doneEditModal();
+    }
+    changeColor = (ev) => {
+        const newColor = ev.target.value;
+        this.setState({color: newColor});
+        this.props.changeColor(newColor);
     }
 
     render() {
         const status = this.state.isEdit;
         return (
             status ?
-                <section className="edit-note flex">
-                    <div className="done-edit-btn animate__animated animate__fadeIn" onClick={this.handleDoneEdit}>done</div>
+                <section className="edit-note flex animate__animated animate__fadeIn">
+                    <div className="done-edit-btn" onClick={this.handleDoneEdit}>done</div>
                 </section> :
-                <section className="edit-note flex">
-                    <div className="edit-note edit-btn animate__animated animate__fadeIn" onClick={this.handleEdit}><i className="fas fa-edit edit-small-btn"></i></div>
-                    <div className="remove-note edit-btn animate__animated animate__fadeIn" onClick={this.handleRemove}><i className="fas fa-trash edit-small-btn"></i></div>
+                <section className="edit-note flex animate__animated animate__fadeIn">
+                    <div className="remove-note edit-btn" onClick={this.handleRemove}><i className="fas fa-trash edit-small-btn"></i></div>
+
+                    <div className="edit-note edit-btn" onClick={this.handleEdit}><i className="fas fa-edit edit-small-btn"></i></div>
+
+                    <input className="note-color-picker" type="color" onChange={this.changeColor} name="favcolor" value={this.state.color}/>
                 </section>
 
         )

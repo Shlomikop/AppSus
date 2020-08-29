@@ -2,8 +2,8 @@
 export class NoteText extends React.Component {
 
     state = {
-        text: null,
-        isEdit: false,
+        text: '',
+        isEdit: false
     }
 
     componentDidMount() {
