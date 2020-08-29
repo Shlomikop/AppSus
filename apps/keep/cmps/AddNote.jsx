@@ -26,7 +26,8 @@ export class AddNote extends React.Component {
 
     handleValueChange = (ev) => {
         const newText = ev.target.value;
-        this.updateState('text', newText);
+        const key = ev.target.name;
+        this.updateState(key, newText);
     }
 
     getPlaceHolder() {
@@ -34,10 +35,14 @@ export class AddNote extends React.Component {
             case 'NoteText':
                 return 'What\'s on your mine?'
                 break;
+            case 'NoteImg':
+                return 'Image title'
+                break;
         }
     }
 
     onSubmit = (ev) => {
+    console.log("AddNote -> onSubmit -> ev")
 
         if (!this.state.note.info.text) return;
 
@@ -52,7 +57,7 @@ export class AddNote extends React.Component {
             noteType: type,
             info: {
                 text: '',
-                url: null
+                url: ''
             }
         }
     }
@@ -69,8 +74,16 @@ export class AddNote extends React.Component {
                     <input placeholder={this.getPlaceHolder()}
                         type="text" onChange={this.handleValueChange}
                         value={this.state.note.info.text}
-                        className="input-text"
+                        name="text"
+                        className="input-text animate__animated animate__backInLeft"
                     />
+                    {this.state.note.noteType === 'NoteImg' &&
+                        <input placeholder="Add image URL..."
+                            type="text" onChange={this.handleValueChange}
+                            value={this.state.note.info.url} 
+                            name="url"
+                            className="input-text animate__animated animate__fadeIn"
+                        />}
                     <div className="flex">
                         <i className="fas fa-font control-add-btn" onClick={() => this.changeNoteType('NoteText')}></i>
                         <i className="fas fa-image control-add-btn" onClick={() => this.changeNoteType('NoteImg')}></i>

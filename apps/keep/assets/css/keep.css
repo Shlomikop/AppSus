@@ -89,7 +89,17 @@
     background-color: #afabab;
     color: #33353d;
 }
- 
+
+/* img-note */
+.img-in-note{
+    width: 100%;
+}
+.img-note h4{
+    margin: 0 0 3px;
+    font-weight: normal;
+}
+
+
 /* HELPERS */
 
  .flex{

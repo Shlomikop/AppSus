@@ -30,7 +30,6 @@ export class EditNote extends React.Component {
 
     handleEdit = () => {
         this.props.changeEditState();
-        console.log(this.props.noteId);
         this.setState({ isEdit: true });
     }
 
@@ -49,11 +48,11 @@ export class EditNote extends React.Component {
         return (
             status ?
                 <section className="edit-note flex">
-                    <div className="done-edit-btn" onClick={this.handleDoneEdit}>done</div>
+                    <div className="done-edit-btn animate__animated animate__fadeIn" onClick={this.handleDoneEdit}>done</div>
                 </section> :
                 <section className="edit-note flex">
-                    <div className="edit-note edit-btn" onClick={this.handleEdit}><i className="fas fa-edit edit-small-btn"></i></div>
-                    <div className="remove-note edit-btn" onClick={this.handleRemove}><i className="fas fa-trash edit-small-btn"></i></div>
+                    <div className="edit-note edit-btn animate__animated animate__fadeIn" onClick={this.handleEdit}><i className="fas fa-edit edit-small-btn"></i></div>
+                    <div className="remove-note edit-btn animate__animated animate__fadeIn" onClick={this.handleRemove}><i className="fas fa-trash edit-small-btn"></i></div>
                 </section>
 
         )
