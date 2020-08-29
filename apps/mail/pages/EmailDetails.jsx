@@ -16,6 +16,7 @@ export class EmailDetails extends React.Component {
     onRemoveEmail = () => {
         emailService.deleteEmail(this.state.email.id)
         this.props.history.push('/mail')
+        Swal.fire('Email Deleted')
     }
     onGoBack = () => {
         this.props.history.push('/mail')

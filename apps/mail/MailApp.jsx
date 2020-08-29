@@ -13,7 +13,8 @@ export class MailApp extends React.Component {
         filterBy: '',
         isModalOpen: false,
         isStarredShown: false,
-        starredEmails: []
+        starredEmails: [],
+        progress:emailService.progressCalc()
     }
 
     componentDidMount() {
@@ -22,13 +23,14 @@ export class MailApp extends React.Component {
 
  
 
-    loadEmails = () => {
+    loadEmails = (progress) => {
+        if(progress)this.setState({progress})
         emailService.query()
             .then(emails => {
                 this.setState({ emails })
             })
     }
-
+ 
     get emailsToShow() {
         if (this.state.isStarredShown === false) {
             return this.state.emails.filter(email => email.subject.toLowerCase().includes(this.state.filterBy.toLowerCase()))
@@ -57,7 +59,7 @@ export class MailApp extends React.Component {
     backToInbox=()=>{
         this.setState({isStarredShown:false})
     }
-
+  
 
 
     render() {
@@ -67,8 +69,8 @@ export class MailApp extends React.Component {
             <EmailFilter setFilter={this.setFilter} />
             <div className="email-container w100P flex">
 
-                <div className="twentyPw"><SideBar inbox={this.backToInbox} setStarredEmails={this.setStarredEmails} toggleModal={this.toggleModal} history={this.props.history} className="side-bar flex column" /></div>
-                <div className="eightyPw"> <EmailList emails={this.emailsToShow} history={this.props.history} loadEmails={this.loadEmails} /></div>
+                <div className="twentyPw"><SideBar progress={this.state.progress} inbox={this.backToInbox} setStarredEmails={this.setStarredEmails} toggleModal={this.toggleModal} history={this.props.history} className="side-bar flex column" /></div>
+                <div className="eightyPw"> <EmailList setBoolRender={this.setBoolRender} emails={this.emailsToShow} history={this.props.history} loadEmails={this.loadEmails} /></div>
 
             </div>
             <Modal closeParentModal={this.closeParentModal} toggleModal={this.state.isModalOpen}>

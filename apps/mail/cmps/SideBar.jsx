@@ -3,13 +3,20 @@ import { emailService } from '../services/mail-service.js'
 export class SideBar extends React.Component {
 
     state = {
-        
-        progress: emailService.progressCalc()
+        progress: this.props.progress
     }
 
-    
+
+
+    //  componentDidUpdate(prevProps,prevState){
+
+    //  }
+    setProgress = () => {
+        if(this.state.progress===this.props.progress)return
+        this.setState({progress:this.props.progress})
+    }
     showInbox = () => {
-        this.props.inbox()   
+        this.props.inbox()
     }
     showStarred = () => {
         this.props.setStarredEmails()
@@ -17,7 +24,7 @@ export class SideBar extends React.Component {
 
 
     render() {
-console.log('this is the progress amount at SIDEBAR:' ,this.state.progress);
+        this.setProgress()
         return <div className="side-bar-container">
 
             <a className="btn-compose" onClick={() => { this.props.toggleModal() }} ><div className="text-compose">Compose</div></a>

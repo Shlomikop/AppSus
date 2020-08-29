@@ -1,7 +1,7 @@
 import { EmailPreview } from './EmailPreview.jsx'
 
 
-export function EmailList({ emails, loadEmails, history }) {
+export function EmailList({ emails, loadEmails, history, setBoolRender }) {
 
 
 
