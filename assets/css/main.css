@@ -18,6 +18,25 @@ body {
     margin:0;
     background-color: #f1f3f8;
 }
+.home-page{
+    font-family: dosis;
+}
+.home-page h1{
+    font-size: 3rem;
+    margin-top:60px;
+}
+.home-page h1 section{
+    font-size: 3rem; 
+    color:#fada3d;
+}
+.subtitle-home p,section{
+    display: inline;
+    font-size: 1.5rem;
+}
+.subtitle-home section{
+    color:#fada3d;
+    font-weight: 800;
+}
 
 .nav-bar{
     
@@ -53,6 +72,10 @@ body {
 @media (max-width: 500px){
     .nav-bar{
         height: 50px;
+        display: flex;
+    }
+    .nav-item-div{
+    margin-left: 20px;
     }
 }
 

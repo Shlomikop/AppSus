@@ -1,5 +1,3 @@
-
-
 export const emailService = {
   query,
   onRead,
@@ -83,11 +81,18 @@ function _filterredEmailsbyStars() {
   return starredEmails
 }
 
-function onRead(emailId) {
+function onRead(emailId, security) {
+
   let emailIdx = emails.findIndex(email => email.id === emailId)
-  if (emails[emailIdx].isRead) emails[emailIdx].isRead = false
-  else emails[emailIdx].isRead = true
+  if (security === 'toggle') {
+    if (emails[emailIdx].isRead) emails[emailIdx].isRead = false
+    else emails[emailIdx].isRead = true
+  } else if (security === 'dontToggle') {
+    if (emails[emailIdx].isRead) return
+    else emails[emailIdx].isRead = true
+  }
 }
+
 
 function getById(emailId) {
   const email = emails.find(email => email.id === emailId)

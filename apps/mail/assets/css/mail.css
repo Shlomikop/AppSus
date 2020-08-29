@@ -9,6 +9,7 @@ hr{
     height: 2px;
     color:#e6ebeb; 
     width: 100%;
+    margin: 0;
 }
 
 .side-bar{
@@ -26,7 +27,8 @@ ul{
     border-radius: 10px;
     width: 30%;
     outline: none;
-    margin-top: 5px;
+    margin: 20px 0;
+   
 }
 .preview-main{
     font-family: roboto-thin, serif;
@@ -35,6 +37,7 @@ ul{
     grid-template-rows:auto;
     border-bottom:solid 1px #e0e2e2;
     font-weight: 700;
+    font-size:1rem;
 }
 .preview-main:hover{
     border-bottom:solid 3px #e1e2e2 ;
@@ -90,6 +93,7 @@ ul{
 .date-prev{
     grid-column:6/7;
     text-align: right;
+    padding-right: 5px;
 }
 
 
@@ -199,6 +203,9 @@ width: 50%;
 .h100vh{
     height: 100vh;
 }
+.h100P{
+    height: 100%;
+}
 
 
 table{
@@ -220,6 +227,7 @@ table{
 
 .side-bar-container{
     font-family: roboto-thin,serif;
+    font-size: 1rem;
     color: #77797b;
     font-weight: 700;
     padding-left: 20px;
@@ -332,4 +340,69 @@ padding-top: 2px;
 .btn-delete:hover{
     color:#fada3d;
     background-color:#393B44  ;
+}
+.email-details h1{
+    text-align: center;
+    margin: 0;
+}
+
+/* RESPONSIVENESS ------------------------------- */
+
+/* Tablet */
+
+@media(max-width:900px){
+    .preview-main{
+        font-size: 0.8rem;
+    }
+    .side-bar-container{
+        font-size: 0.8rem;
+    }
+    .btn-compose:hover {
+        width: 120px;
+    }
+       
+}
+
+/* Mobile  */
+
+@media(max-width:550px){
+    
+   .email-container {
+       flex-direction: column;
+   }
+   .sidebar-out{
+       width: 100%;
+   }
+   .emailslist-out{
+       width: 100%;
+   }
+    
+    .side-bar-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 0.7rem;
+    }
+    .side-bar-container ul{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .side-bar-container ul li{
+        margin: auto;
+        margin-inline-start: 20px;
+    }
+    .emails-read{
+        margin-inline-start: 20px;
+        margin-top: 3px;
+        font-size: 0.7rem; 
+    }  
+
+    .preview-main{
+        font-size: 0.8rem;
+        
+    }
+    
 }
