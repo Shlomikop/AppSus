@@ -378,12 +378,14 @@ padding-top: 2px;
    }
     
     .side-bar-container{
+        width: 100%;
         display: flex;
         flex-direction: row;
-        font-size: 0.6rem;
+        justify-content: space-between;
+        font-size: 0.7rem;
     }
     .side-bar-container ul{
-        width:70%;
+        width: 80%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -395,6 +397,12 @@ padding-top: 2px;
     .emails-read{
         margin-inline-start: 20px;
         margin-top: 3px;
-        font-size: 0.6rem; 
+        font-size: 0.7rem; 
     }  
+
+    .preview-main{
+        font-size: 0.8rem;
+        
+    }
+    
 }
