@@ -18,6 +18,9 @@ body {
     margin:0;
     background-color: #f1f3f8;
 }
+input{
+    background-color: #E6EBEB;
+}
 .home-page{
     font-family: dosis;
 }
