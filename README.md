@@ -1,5 +1,5 @@
-# AppSus is an Email & Notes application made during the Coding Academy sprint by Shahar Sadof & Shlomi Koplianski.
+# AppSus is an Email & Notes application. 
 
-In essence, this application is a demo-like version of GoogleNotes and Gmail. 
+Made during the Coding Academy sprint by Shahar Sadof & Shlomi Koplianski, this application is a demo-like version of GoogleNotes and Gmail. 
 
-This app architecture is based entirely on front-end methodologies.
+The AppSus architecture is based entirely on front-end methodologies.
